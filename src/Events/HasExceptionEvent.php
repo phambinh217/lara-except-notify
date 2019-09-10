@@ -17,9 +17,11 @@ class HasExceptionEvent
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     public $exception;
+    public $metas;
 
-    public function __construct(Exception $exception)
+    public function __construct(Exception $exception, $metas = [])
     {
         $this->exception = $exception;
+        $this->metas = $metas;
     }
 }
